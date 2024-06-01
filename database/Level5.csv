@@ -1,0 +1,5 @@
+Enemy, Hp, Attack, MagicResistance, Defense, Element
+Fire_Golem,1000, 400, 500, 500, fire
+Earth_Golem,3000, 200, 600, 600, earth
+Water_Golem,2000, 300, 400, 300, water
+Nature_Golem,1000, 300, 700, 500, nature

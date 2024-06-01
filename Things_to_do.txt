@@ -1,0 +1,11 @@
+1. Finishing the csv files with enemies
+2. Selecting a random enemy based on the level we are on
+3. Working on a system how stats affect the playthrough
+4. Woking on items implementation
+
+//optional
+5. Adding difficulty options:
+
+-Easy: stats * 0.5
+-Noraml: stats
+-Hard: stats* 1.5
