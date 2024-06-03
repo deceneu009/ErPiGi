@@ -5,6 +5,9 @@
 #include "Levels.cpp"
 #include <sstream>
 #include <string>
+#include <vector>
+
+std::vector<std::string> victories;
 
 class Enemy
 {
@@ -14,9 +17,32 @@ private:
 
 public:
     Enemy(std::string _name) : name(_name), hp(0), PhysicalDmg(0), MagicPower(0), MagicResistance(0), Defense(0){};
+
+    // Initializing the stats at the beginning
     void Enemy_stats();
+
+    // just for testing purposes
     void print();
-    void Defeated();
+
+    // getting the stats
+    int GetDefense();
+    int GetPhysicalDamage();
+    int GetHp();
+    int GetMagicResistance();
+    int GetMagicPower();
+    std::string GetName();
+    std::string GetElement();
+
+    // Setting the stats based on the elements
+    void SetDefense(int value) { Defense = value; }
+    void SetMagicResistance(int value) { MagicResistance = value; }
+    void SetMagicPower(int value) { MagicPower = value; }
+    void SetPhysicalDamage(int value) { PhysicalDmg = value; }
+
+    ~Enemy()
+    {
+        std::cout << "The " << name << " was defetead!\n";
+    }
 };
 
 std::string getName()
@@ -69,9 +95,10 @@ void Enemy::Enemy_stats()
 
     std::string line, enemy, stats;
     int ID = 1, enemyID, i = 0;
-    
+
     enemyID = Random_selector();
 
+    // getting the line that contains the enemy selected from the .csv file
     while (std::getline(reader, line))
     {
         if (ID == enemyID)
@@ -84,6 +111,7 @@ void Enemy::Enemy_stats()
 
     reader.close();
 
+    // getting the stats from the .csv file
     std::istringstream stats_parsing(enemy);
     while (std::getline(stats_parsing, stats, ','))
     {
@@ -136,4 +164,48 @@ void Enemy::print()
     std::cout << "Magic Resistance: " << MagicResistance << "\n";
     std::cout << "Defense: " << Defense << "\n";
     std::cout << "Element: " << element << "\n";
+}
+
+int Enemy::GetPhysicalDamage()
+{
+    return PhysicalDmg;
+}
+
+int Enemy::GetDefense()
+{
+    return Defense;
+}
+
+int Enemy::GetHp()
+{
+    return hp;
+}
+
+int Enemy::GetMagicPower()
+{
+    return MagicPower;
+}
+
+int Enemy::GetMagicResistance()
+{
+    return MagicResistance;
+}
+
+std::string Enemy::GetName()
+{
+    return name;
+}
+
+std::string Enemy::GetElement()
+{
+    return element;
+}
+
+// Function to simulate the defeat of the enemy
+void defeatEnemy(Enemy *enemy)
+{
+    level++;
+    std::string enemyName = enemy->GetName();
+    victories.push_back(enemyName);
+    delete enemy; // Free the memory occupied by the hero
 }

@@ -1,1 +1,10 @@
-Enemy, Hp, Attack, MagicResistance, Defense, Element
+Enemy,Hp,PhysicalDamage,MagicPower,MagicResistance,Defense,Element
+Spirit of Annihilation,
+AETIUS TORGOVUS,
+Ork King,
+Nine-Tailed Fox,
+Living Tornado,
+Anaklin Skyscrapper,
+Darth Mutter,
+Necromancer,
+Chosen Swordmaster
