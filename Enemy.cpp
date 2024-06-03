@@ -25,13 +25,14 @@ public:
     void print();
 
     // getting the stats
-    int GetDefense();
-    int GetPhysicalDamage();
-    int GetHp();
-    int GetMagicResistance();
-    int GetMagicPower();
-    std::string GetName();
-    std::string GetElement();
+    int GetDefense() const { return Defense; }
+    int GetPhysicalDamage() const { return PhysicalDmg; }
+    int GetMagicResistance() const { return MagicResistance; }
+    int GetMagicPower() const { return MagicPower; }
+    int GetHp() const { return hp; }
+    std::string GetElement() const { return element; }
+    std::string GetName() const { return name; }
+
 
     // Setting the stats based on the elements
     void SetDefense(int value) { Defense = value; }
@@ -164,41 +165,6 @@ void Enemy::print()
     std::cout << "Magic Resistance: " << MagicResistance << "\n";
     std::cout << "Defense: " << Defense << "\n";
     std::cout << "Element: " << element << "\n";
-}
-
-int Enemy::GetPhysicalDamage()
-{
-    return PhysicalDmg;
-}
-
-int Enemy::GetDefense()
-{
-    return Defense;
-}
-
-int Enemy::GetHp()
-{
-    return hp;
-}
-
-int Enemy::GetMagicPower()
-{
-    return MagicPower;
-}
-
-int Enemy::GetMagicResistance()
-{
-    return MagicResistance;
-}
-
-std::string Enemy::GetName()
-{
-    return name;
-}
-
-std::string Enemy::GetElement()
-{
-    return element;
 }
 
 // Function to simulate the defeat of the enemy
