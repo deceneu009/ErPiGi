@@ -34,6 +34,8 @@ float AdjustMDamage(float magicResistance, float MagicPower)
 }
 
 // Adjusting the stats based on the elements of the Hero and the Enemy
+
+// need to make both elements lowercase
 Stats AdjustStatsBasedOnElement(Hero *hero, Enemy *enemy)
 {
     // Save original stats for the hero
@@ -289,6 +291,7 @@ void battle(Hero *hero, Enemy *enemy)
         if (enemyActualMagicDmg <= 0)
         {
             std::cout << "Enemy missed his spell!";
+            AttackOrder++;
             continue;
         }
         heroHp -= enemyActualMagicDmg;
@@ -368,7 +371,7 @@ int main()
         hero = new Defender(name, element);
     }
 
-    std::cout<<"\n";
+    std::cout << "\n";
 
     hero->start_stats(); // Setting the Correct Stats of the Class
     hero->print();       // Call the print method to display the stats
@@ -377,7 +380,7 @@ int main()
 
     while (level < 11)
     {
-        if(level>=2)
+        if (level >= 2)
         {
             hero->LevelUpHero();
         }
@@ -392,7 +395,7 @@ int main()
         enemy->Enemy_stats();
         enemy->print();
 
-        std::cout<<"\n";
+        std::cout << "\n";
 
         // starts the battle
         battle(hero, enemy);
@@ -402,7 +405,7 @@ int main()
             std::cout << "Do you want to continue?(yes/no)\n";
             std::cin >> continuation;
 
-            std::cout<<"\n";
+            std::cout << "\n";
 
             // if the player wants to continue
             if (continuation == "yes")
@@ -416,9 +419,12 @@ int main()
             {
                 std::cout << el << "\n";
             }
+            std::cout<<"\n";
             break;
         }
     }
+    if(Alive==true)
+        Hero_won(hero);
 
     return 0;
 }

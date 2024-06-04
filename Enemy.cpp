@@ -8,6 +8,7 @@
 #include <vector>
 
 std::vector<std::string> victories;
+std::ifstream reader;
 
 class Enemy
 {

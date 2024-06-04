@@ -16,7 +16,6 @@ public:
     static int Level;
 
     virtual void start_stats() = 0;
-    void assign_extra_points(); // each level the character gain 5 or so extra points that he can assign to his stats to become stronger
 
     // getting the stats
     float GetDefense() const { return Defense; }
@@ -37,7 +36,7 @@ public:
 
     ~Hero()
     {
-        std::cout << "The Hero was defetead\n";
+        std::cout<<"THE LEGEND OF THE HERO WILL PERSIST IN OUR HEARTS!";  
     }
 
     // for testing
@@ -51,8 +50,15 @@ int Hero::Level = 1;
 // Function to simulate the defeat of a hero
 void defeatHero(Hero *hero)
 {
+    std::cout << "The Hero was defetead\n";
     delete hero; // Free the memory occupied by the hero
     Alive = false;
+}
+
+void Hero_won(Hero *hero)
+{
+    std::cout<<"The Hero won!!!\n";
+    delete hero;
 }
 
 class Mage : public Hero
@@ -251,6 +257,7 @@ public:
     void LevelUpHero() override;
 };
 
+//Stats for rogue at the beginning
 void Rogue::start_stats()
 {
     hp = 40.0;
@@ -260,6 +267,7 @@ void Rogue::start_stats()
     Defense = 15.0;
 }
 
+//Level up for Rogue
 void Rogue::LevelUpHero()
 {
     Level++;
@@ -337,6 +345,7 @@ void Rogue::LevelUpHero()
     }
 }
 
+//class for Defender
 class Defender : public Hero
 {
 public:
@@ -345,6 +354,7 @@ public:
     void LevelUpHero() override;
 };
 
+//Defender stats at beginning
 void Defender::start_stats()
 {
     hp = 60.0;
@@ -354,6 +364,7 @@ void Defender::start_stats()
     Defense = 25.0;
 }
 
+//level up for defender
 void Defender::LevelUpHero()
 {
     Level++;
