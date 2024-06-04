@@ -1,7 +1,6 @@
 #include <iostream>
-#include <memory>
-#include "Hero.cpp"
-#include "Enemy.cpp"
+#include "character/hero/Hero.h"
+#include "character/enemy/Enemy.h"
 #include <algorithm>
 #include <random>
 #include <time.h>
@@ -9,8 +8,7 @@
 bool HeroStatsModified = false;
 
 // for saving the original stats
-struct Stats
-{
+struct Stats {
     float Defense;
     float MagicResistance;
     float MagicPower;
@@ -18,16 +16,14 @@ struct Stats
 };
 
 // calculate the damage the Hero and the enemy do based on their Defense
-float AdjustPDamage(float defense, float attack)
-{
+float AdjustPDamage(float defense, float attack) {
     float actualDefense = 0.2 * defense;
     float actualPhysicalDamage = attack - actualDefense;
     return actualPhysicalDamage;
 }
 
 // calculate the damage the Hero and the enemy do based on their MagicResistance
-float AdjustMDamage(float magicResistance, float MagicPower)
-{
+float AdjustMDamage(float magicResistance, float MagicPower) {
     float actualMagicResistance = 0.2 * magicResistance;
     float actualMagicDamage = MagicPower - actualMagicResistance;
     return actualMagicDamage;
@@ -36,8 +32,7 @@ float AdjustMDamage(float magicResistance, float MagicPower)
 // Adjusting the stats based on the elements of the Hero and the Enemy
 
 // need to make both elements lowercase
-Stats AdjustStatsBasedOnElement(Hero *hero, Enemy *enemy)
-{
+Stats AdjustStatsBasedOnElement(Hero *hero, Enemy *enemy) {
     // Save original stats for the hero
     Stats heroOriginal = {hero->GetDefense(), hero->GetMagicResistance(), hero->GetMagicPower(), hero->GetPhysicalDamage()};
 
@@ -190,8 +185,7 @@ Stats AdjustStatsBasedOnElement(Hero *hero, Enemy *enemy)
 }
 
 // First that will attack is the one who got the bigger number after rolling the dice
-void battle(Hero *hero, Enemy *enemy)
-{
+void battle(Hero *hero, Enemy *enemy) {
     int AttackOrder, AttackChoice;
     bool EnemyDefetead = false, HeroDefetead = false;
 
@@ -326,6 +320,7 @@ void battle(Hero *hero, Enemy *enemy)
 
 int main()
 {
+
     std::string name, element, Class, continuation;
 
     // Base Info About The Character

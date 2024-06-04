@@ -1,76 +1,22 @@
-#pragma once
-#include <iostream>
-#include <string>
+#include "Hero.h"
 
 bool Alive = true;
 
-// Character Base Stats
-class Hero
-{
-protected:
-    float hp, PhysicalDmg, MagicPower, MagicResistance, Defense;
-    std::string element, name;
-
-public:
-    Hero(std::string _name, std::string _element) : name(_name), element(_element){};
-    static int Level;
-
-    virtual void start_stats() = 0;
-
-    // getting the stats
-    float GetDefense() const { return Defense; }
-    float GetPhysicalDamage() const { return PhysicalDmg; }
-    float GetMagicResistance() const { return MagicResistance; }
-    float GetMagicPower() const { return MagicPower; }
-    float GetHp() const { return hp; }
-    std::string GetElement() const { return element; }
-
-    // setting stats for elements
-    void SetDefense(float value) { Defense = value; }
-    void SetMagicResistance(float value) { MagicResistance = value; }
-    void SetMagicPower(float value) { MagicPower = value; }
-    void SetPhysicalDamage(float value) { PhysicalDmg = value; }
-    void SetHp(float value) { hp = value; }
-
-    virtual void LevelUpHero() = 0;
-
-    ~Hero()
-    {
-        std::cout<<"THE LEGEND OF THE HERO WILL PERSIST IN OUR HEARTS!";  
-    }
-
-    // for testing
-    void print();
-};
-
 int Hero::Level = 1;
-
-// Class of the Character
-
 // Function to simulate the defeat of a hero
-void defeatHero(Hero *hero)
-{
+void defeatHero(Hero *hero) {
     std::cout << "The Hero was defetead\n";
     delete hero; // Free the memory occupied by the hero
     Alive = false;
 }
 
-void Hero_won(Hero *hero)
-{
+void Hero_won(Hero *hero) {
     std::cout<<"The Hero won!!!\n";
     delete hero;
 }
 
-class Mage : public Hero
-{
-public:
-    Mage(std::string _name, std::string _element) : Hero(_name, _element){};
-    void start_stats() override;
-    void LevelUpHero() override;
-};
 
-void Mage::start_stats()
-{
+void Mage::start_stats() {
     hp = 30.0;
     PhysicalDmg = 10.0;
     MagicPower = 25.0;
@@ -78,75 +24,74 @@ void Mage::start_stats()
     Defense = 10.0;
 }
 
-void Mage::LevelUpHero()
-{
+void Mage::LevelUpHero() {
+
     Level++;
-    if (Level == 2)
-    {
+    if (Level == 2) {
         SetDefense(Defense * 1.2);
         SetMagicPower(MagicPower * 1.4);
         SetMagicResistance(MagicResistance * 1.4);
         SetPhysicalDamage(PhysicalDmg * 1.1);
         SetHp(hp * 1.3);
     }
-    if (Level == 3)
-    {
+
+    if (Level == 3) {
         SetDefense(Defense * 1.5);
         SetMagicPower(MagicPower * 1.8);
         SetMagicResistance(MagicResistance * 1.8);
         SetPhysicalDamage(PhysicalDmg * 1.4);
         SetHp(hp * 1.7);
     }
-    if (Level == 4)
-    {
+
+    if (Level == 4) {
         SetDefense(Defense * 2);
         SetMagicPower(MagicPower * 3);
         SetMagicResistance(MagicResistance * 3.5);
         SetPhysicalDamage(PhysicalDmg * 1.8);
         SetHp(hp * 2.5);
     }
-    if (Level == 5)
-    {
+
+    if (Level == 5) {
         SetDefense(Defense * 3);
         SetMagicPower(MagicPower * 4.5);
         SetMagicResistance(MagicResistance * 5);
         SetPhysicalDamage(PhysicalDmg * 2.6);
         SetHp(hp * 3.5);
     }
-    if (Level == 6)
-    {
+
+    if (Level == 6) {
         SetDefense(Defense * 3.6);
         SetMagicPower(MagicPower * 5);
         SetMagicResistance(MagicResistance * 6);
         SetPhysicalDamage(PhysicalDmg * 3);
         SetHp(hp * 4.5);
     }
-    if (Level == 7)
-    {
+
+    if (Level == 7) {
         SetDefense(Defense * 4.6);
         SetMagicPower(MagicPower * 5.5);
         SetMagicResistance(MagicResistance * 6.5);
         SetPhysicalDamage(PhysicalDmg * 4);
         SetHp(hp * 5.5);
     }
-    if (Level == 8)
-    {
+
+    if (Level == 8) {
         SetDefense(Defense * 5.2);
         SetMagicPower(MagicPower * 6);
         SetMagicResistance(MagicResistance * 7);
         SetPhysicalDamage(PhysicalDmg * 5);
         SetHp(hp * 6);
     }
-    if (Level == 9)
-    {
+
+    if (Level == 9) {
         SetDefense(Defense * 5.5);
         SetMagicPower(MagicPower * 6.5);
         SetMagicResistance(MagicResistance * 7.6);
         SetPhysicalDamage(PhysicalDmg * 6);
         SetHp(hp * 6.2);
     }
-    if (Level == 10)
-    {
+
+    if (Level == 10) {
         SetDefense(Defense * 5.7);
         SetMagicPower(MagicPower * 7);
         SetMagicResistance(MagicResistance * 8);
@@ -155,16 +100,8 @@ void Mage::LevelUpHero()
     }
 }
 
-class Warrior : public Hero
-{
-public:
-    Warrior(std::string _name, std::string _element) : Hero(_name, _element){};
-    void start_stats() override;
-    void LevelUpHero() override;
-};
 
-void Warrior::start_stats()
-{
+void Warrior::start_stats() {
     hp = 50.0;
     PhysicalDmg = 25.0;
     MagicPower = 10.0;
@@ -172,75 +109,74 @@ void Warrior::start_stats()
     Defense = 20.0;
 }
 
-void Warrior::LevelUpHero()
-{
+void Warrior::LevelUpHero() {
+
     Level++;
-    if (Level == 2)
-    {
+    if (Level == 2) {
         SetDefense(Defense * 1.2);
         SetMagicPower(MagicPower * 1.4);
         SetMagicResistance(MagicResistance * 1.4);
         SetPhysicalDamage(PhysicalDmg * 1.1);
         SetHp(hp * 1.3);
     }
-    if (Level == 3)
-    {
+
+    if (Level == 3) {
         SetDefense(Defense * 1.5);
         SetMagicPower(MagicPower * 1.8);
         SetMagicResistance(MagicResistance * 1.8);
         SetPhysicalDamage(PhysicalDmg * 1.4);
         SetHp(hp * 1.7);
     }
-    if (Level == 4)
-    {
+
+    if (Level == 4) {
         SetDefense(Defense * 2);
         SetMagicPower(MagicPower * 3);
         SetMagicResistance(MagicResistance * 3.5);
         SetPhysicalDamage(PhysicalDmg * 1.8);
         SetHp(hp * 2.5);
     }
-    if (Level == 5)
-    {
+
+    if (Level == 5) {
         SetDefense(Defense * 3);
         SetMagicPower(MagicPower * 4.5);
         SetMagicResistance(MagicResistance * 5);
         SetPhysicalDamage(PhysicalDmg * 2.6);
         SetHp(hp * 3.5);
     }
-    if (Level == 6)
-    {
+
+    if (Level == 6) {
         SetDefense(Defense * 3.6);
         SetMagicPower(MagicPower * 5);
         SetMagicResistance(MagicResistance * 6);
         SetPhysicalDamage(PhysicalDmg * 3);
         SetHp(hp * 4.5);
     }
-    if (Level == 7)
-    {
+
+    if (Level == 7) {
         SetDefense(Defense * 4.6);
         SetMagicPower(MagicPower * 5.5);
         SetMagicResistance(MagicResistance * 6.5);
         SetPhysicalDamage(PhysicalDmg * 4);
         SetHp(hp * 5.5);
     }
-    if (Level == 8)
-    {
+
+    if (Level == 8) {
         SetDefense(Defense * 5.2);
         SetMagicPower(MagicPower * 6);
         SetMagicResistance(MagicResistance * 7);
         SetPhysicalDamage(PhysicalDmg * 5);
         SetHp(hp * 6);
     }
-    if (Level == 9)
-    {
+
+    if (Level == 9) {
         SetDefense(Defense * 5.5);
         SetMagicPower(MagicPower * 6.5);
         SetMagicResistance(MagicResistance * 7.6);
         SetPhysicalDamage(PhysicalDmg * 6);
         SetHp(hp * 6.2);
     }
-    if (Level == 10)
-    {
+
+    if (Level == 10) {
         SetDefense(Defense * 5.7);
         SetMagicPower(MagicPower * 7);
         SetMagicResistance(MagicResistance * 8);
@@ -249,17 +185,8 @@ void Warrior::LevelUpHero()
     }
 }
 
-class Rogue : public Hero
-{
-public:
-    Rogue(std::string _name, std::string _element) : Hero(_name, _element){};
-    void start_stats() override;
-    void LevelUpHero() override;
-};
-
 //Stats for rogue at the beginning
-void Rogue::start_stats()
-{
+void Rogue::start_stats() {
     hp = 40.0;
     PhysicalDmg = 20.0;
     MagicPower = 15.0;
@@ -268,75 +195,74 @@ void Rogue::start_stats()
 }
 
 //Level up for Rogue
-void Rogue::LevelUpHero()
-{
+void Rogue::LevelUpHero() {
+
     Level++;
-    if (Level == 2)
-    {
+    if (Level == 2) {
         SetDefense(Defense * 1.2);
         SetMagicPower(MagicPower * 1.4);
         SetMagicResistance(MagicResistance * 1.4);
         SetPhysicalDamage(PhysicalDmg * 1.1);
         SetHp(hp * 1.3);
     }
-    if (Level == 3)
-    {
+
+    if (Level == 3) {
         SetDefense(Defense * 1.5);
         SetMagicPower(MagicPower * 1.8);
         SetMagicResistance(MagicResistance * 1.8);
         SetPhysicalDamage(PhysicalDmg * 1.4);
         SetHp(hp * 1.7);
     }
-    if (Level == 4)
-    {
+
+    if (Level == 4) {
         SetDefense(Defense * 2);
         SetMagicPower(MagicPower * 3);
         SetMagicResistance(MagicResistance * 3.5);
         SetPhysicalDamage(PhysicalDmg * 1.8);
         SetHp(hp * 2.5);
     }
-    if (Level == 5)
-    {
+
+    if (Level == 5) {
         SetDefense(Defense * 3);
         SetMagicPower(MagicPower * 4.5);
         SetMagicResistance(MagicResistance * 5);
         SetPhysicalDamage(PhysicalDmg * 2.6);
         SetHp(hp * 3.5);
     }
-    if (Level == 6)
-    {
+
+    if (Level == 6) {
         SetDefense(Defense * 3.6);
         SetMagicPower(MagicPower * 5);
         SetMagicResistance(MagicResistance * 6);
         SetPhysicalDamage(PhysicalDmg * 3);
         SetHp(hp * 4.5);
     }
-    if (Level == 7)
-    {
+
+    if (Level == 7) {
         SetDefense(Defense * 4.6);
         SetMagicPower(MagicPower * 5.5);
         SetMagicResistance(MagicResistance * 6.5);
         SetPhysicalDamage(PhysicalDmg * 4);
         SetHp(hp * 5.5);
     }
-    if (Level == 8)
-    {
+
+    if (Level == 8) {
         SetDefense(Defense * 5.2);
         SetMagicPower(MagicPower * 6);
         SetMagicResistance(MagicResistance * 7);
         SetPhysicalDamage(PhysicalDmg * 5);
         SetHp(hp * 6);
     }
-    if (Level == 9)
-    {
+
+    if (Level == 9) {
         SetDefense(Defense * 5.5);
         SetMagicPower(MagicPower * 6.5);
         SetMagicResistance(MagicResistance * 7.6);
         SetPhysicalDamage(PhysicalDmg * 6);
         SetHp(hp * 6.2);
     }
-    if (Level == 10)
-    {
+
+    if (Level == 10) {
         SetDefense(Defense * 5.7);
         SetMagicPower(MagicPower * 7);
         SetMagicResistance(MagicResistance * 8);
@@ -345,18 +271,8 @@ void Rogue::LevelUpHero()
     }
 }
 
-//class for Defender
-class Defender : public Hero
-{
-public:
-    Defender(std::string _name, std::string _element) : Hero(_name, _element){};
-    void start_stats() override;
-    void LevelUpHero() override;
-};
 
-//Defender stats at beginning
-void Defender::start_stats()
-{
+void Defender::start_stats() {
     hp = 60.0;
     PhysicalDmg = 15.0;
     MagicPower = 5.0;
@@ -364,76 +280,74 @@ void Defender::start_stats()
     Defense = 25.0;
 }
 
-//level up for defender
-void Defender::LevelUpHero()
-{
+void Defender::LevelUpHero() {
+
     Level++;
-    if (Level == 2)
-    {
+    if (Level == 2) {
         SetDefense(Defense * 1.6);
         SetMagicPower(MagicPower * 1.3);
         SetMagicResistance(MagicResistance * 1.6);
         SetPhysicalDamage(PhysicalDmg * 1.3);
         SetHp(hp * 1.7);
     }
-    if (Level == 3)
-    {
+
+    if (Level == 3) {
         SetDefense(Defense * 2);
         SetMagicPower(MagicPower * 1.5);
         SetMagicResistance(MagicResistance * 2);
         SetPhysicalDamage(PhysicalDmg * 1.7);
         SetHp(hp * 2.2);
     }
-    if (Level == 4)
-    {
+
+    if (Level == 4) {
         SetDefense(Defense * 2.6);
         SetMagicPower(MagicPower * 2);
         SetMagicResistance(MagicResistance * 3.5);
         SetPhysicalDamage(PhysicalDmg * 2.4);
         SetHp(hp * 3);
     }
-    if (Level == 5)
-    {
+
+    if (Level == 5) {
         SetDefense(Defense * 4);
         SetMagicPower(MagicPower * 2.5);
         SetMagicResistance(MagicResistance * 5);
         SetPhysicalDamage(PhysicalDmg * 3);
         SetHp(hp * 4.7);
     }
-    if (Level == 6)
-    {
+
+    if (Level == 6) {
         SetDefense(Defense * 6);
         SetMagicPower(MagicPower * 3);
         SetMagicResistance(MagicResistance * 7);
         SetPhysicalDamage(PhysicalDmg * 3);
         SetHp(hp * 6);
     }
-    if (Level == 7)
-    {
+
+    if (Level == 7) {
         SetDefense(Defense * 7);
         SetMagicPower(MagicPower * 5.5);
         SetMagicResistance(MagicResistance * 6.5);
         SetPhysicalDamage(PhysicalDmg * 4);
         SetHp(hp * 7);
     }
-    if (Level == 8)
-    {
+
+    if (Level == 8) {
         SetDefense(Defense * 8);
         SetMagicPower(MagicPower * 6);
         SetMagicResistance(MagicResistance * 7);
         SetPhysicalDamage(PhysicalDmg * 5);
         SetHp(hp * 8);
     }
-    if (Level == 9)
-    {
+
+    if (Level == 9) {
         SetDefense(Defense * 9);
         SetMagicPower(MagicPower * 6.5);
         SetMagicResistance(MagicResistance * 7.6);
         SetPhysicalDamage(PhysicalDmg * 6);
         SetHp(hp * 8.5);
     }
-    if (Level == 10)
-    {
+
+    if (Level == 10) {
         SetDefense(Defense * 9.5);
         SetMagicPower(MagicPower * 7);
         SetMagicResistance(MagicResistance * 8);
