@@ -17,8 +17,6 @@ add_executable(ErPiGi
         character/hero/Hero.h
         character/generator.cpp
         character/generator.h
-        game/inventory/inventory.cpp
-        game/inventory/inventory.h
         utils/utils.cpp
         utils/utils.h
         Game.cpp
@@ -26,4 +24,8 @@ add_executable(ErPiGi
         game/levels/Levels.h
         character/player/Player.cpp
         character/player/Player.h
+        game/gameplay/Game.cpp
+        game/gameplay/Game.h
+        game/gameplay/Game.h
+        game/gameplay/Game.h
 )

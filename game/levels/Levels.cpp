@@ -30,7 +30,7 @@ std::string opening_file(int level) {
         std::string FileName = "database\\Level" + std::to_string(level) + ".csv";
         return FileName;
     #elif defined(__linux__)
-        std::string fileName = "database/Level" + std::to_string(level) + ".csv";
+        std::string fileName = "../database/Level" + std::to_string(level) + ".csv";
         return fileName;
     #endif
 }

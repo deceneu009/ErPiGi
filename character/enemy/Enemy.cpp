@@ -21,6 +21,7 @@ std::string getName() {
         }
         ID++;
     }
+
     reader.close();
 
     std::istringstream stats_parsing(enemy);
@@ -29,19 +30,19 @@ std::string getName() {
         name = stats;
         break;
     }
+
     return name;
 }
 
 // Here we will parse row in the csv file that contains the enemy
 // we will get from the info about the enemy
-void Enemy::Enemy_stats() {
+void Enemy::getEnemyStats() {
     std::string FileName = opening_file(level);
     std::ifstream reader;
 
     reader.open(FileName, std::ios::in);
 
-    if (!reader.is_open())
-    {
+    if (!reader.is_open()) {
         std::cerr << "Failed to open the file: " << FileName << std::endl;
         return;
     }
@@ -52,8 +53,7 @@ void Enemy::Enemy_stats() {
     enemyID = Random_selector();
 
     // getting the line that contains the enemy selected from the .csv file
-    while (std::getline(reader, line))
-    {
+    while (std::getline(reader, line)) {
         if (ID == enemyID)
         {
             enemy = line;
@@ -116,5 +116,5 @@ void defeatEnemy(Enemy *enemy) {
     level++;
     std::string enemyName = enemy->GetName();
     victories.push_back(enemyName);
-    delete enemy; // Free the memory occupied by the hero
+    delete enemy;
 }

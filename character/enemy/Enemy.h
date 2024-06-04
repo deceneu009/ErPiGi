@@ -19,7 +19,7 @@ public:
     Enemy(std::string _name) : name(_name), hp(0), PhysicalDmg(0), MagicPower(0), MagicResistance(0), Defense(0){};
 
     // Initializing the stats at the beginning
-    void Enemy_stats();
+    void getEnemyStats();
 
     // just for testing purposes
     void print();

@@ -70,13 +70,6 @@ build CMakeFiles/ErPiGi.dir/character/generator.cpp.o: CXX_COMPILER__ErPiGi_unsc
   OBJECT_DIR = CMakeFiles/ErPiGi.dir
   OBJECT_FILE_DIR = CMakeFiles/ErPiGi.dir/character
 
-build CMakeFiles/ErPiGi.dir/game/inventory/inventory.cpp.o: CXX_COMPILER__ErPiGi_unscanned_Debug /home/seb/Desktop/ErPiGi/game/inventory/inventory.cpp || cmake_object_order_depends_target_ErPiGi
-  DEP_FILE = CMakeFiles/ErPiGi.dir/game/inventory/inventory.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -I/home/seb/Desktop/ErPiGi/. -I/home/seb/Desktop/ErPiGi/character -I/home/seb/Desktop/ErPiGi/character/enemy -I/home/seb/Desktop/ErPiGi/character/hero -I/home/seb/Desktop/ErPiGi/game/inventory -I/home/seb/Desktop/ErPiGi/utils
-  OBJECT_DIR = CMakeFiles/ErPiGi.dir
-  OBJECT_FILE_DIR = CMakeFiles/ErPiGi.dir/game/inventory
-
 build CMakeFiles/ErPiGi.dir/utils/utils.cpp.o: CXX_COMPILER__ErPiGi_unscanned_Debug /home/seb/Desktop/ErPiGi/utils/utils.cpp || cmake_object_order_depends_target_ErPiGi
   DEP_FILE = CMakeFiles/ErPiGi.dir/utils/utils.cpp.o.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
@@ -105,6 +98,13 @@ build CMakeFiles/ErPiGi.dir/character/player/Player.cpp.o: CXX_COMPILER__ErPiGi_
   OBJECT_DIR = CMakeFiles/ErPiGi.dir
   OBJECT_FILE_DIR = CMakeFiles/ErPiGi.dir/character/player
 
+build CMakeFiles/ErPiGi.dir/game/gameplay/Game.cpp.o: CXX_COMPILER__ErPiGi_unscanned_Debug /home/seb/Desktop/ErPiGi/game/gameplay/Game.cpp || cmake_object_order_depends_target_ErPiGi
+  DEP_FILE = CMakeFiles/ErPiGi.dir/game/gameplay/Game.cpp.o.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I/home/seb/Desktop/ErPiGi/. -I/home/seb/Desktop/ErPiGi/character -I/home/seb/Desktop/ErPiGi/character/enemy -I/home/seb/Desktop/ErPiGi/character/hero -I/home/seb/Desktop/ErPiGi/game/inventory -I/home/seb/Desktop/ErPiGi/utils
+  OBJECT_DIR = CMakeFiles/ErPiGi.dir
+  OBJECT_FILE_DIR = CMakeFiles/ErPiGi.dir/game/gameplay
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ErPiGi
@@ -113,7 +113,7 @@ build CMakeFiles/ErPiGi.dir/character/player/Player.cpp.o: CXX_COMPILER__ErPiGi_
 #############################################
 # Link the executable ErPiGi
 
-build ErPiGi: CXX_EXECUTABLE_LINKER__ErPiGi_Debug CMakeFiles/ErPiGi.dir/character/enemy/Enemy.cpp.o CMakeFiles/ErPiGi.dir/character/hero/Hero.cpp.o CMakeFiles/ErPiGi.dir/character/generator.cpp.o CMakeFiles/ErPiGi.dir/game/inventory/inventory.cpp.o CMakeFiles/ErPiGi.dir/utils/utils.cpp.o CMakeFiles/ErPiGi.dir/Game.cpp.o CMakeFiles/ErPiGi.dir/game/levels/Levels.cpp.o CMakeFiles/ErPiGi.dir/character/player/Player.cpp.o
+build ErPiGi: CXX_EXECUTABLE_LINKER__ErPiGi_Debug CMakeFiles/ErPiGi.dir/character/enemy/Enemy.cpp.o CMakeFiles/ErPiGi.dir/character/hero/Hero.cpp.o CMakeFiles/ErPiGi.dir/character/generator.cpp.o CMakeFiles/ErPiGi.dir/utils/utils.cpp.o CMakeFiles/ErPiGi.dir/Game.cpp.o CMakeFiles/ErPiGi.dir/game/levels/Levels.cpp.o CMakeFiles/ErPiGi.dir/character/player/Player.cpp.o CMakeFiles/ErPiGi.dir/game/gameplay/Game.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/ErPiGi.dir
   POST_BUILD = :
