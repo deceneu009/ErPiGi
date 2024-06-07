@@ -281,7 +281,7 @@ void battle(Hero *hero, Enemy *enemy)
     {
         std::cout << "ROUND " << round << "\n";
         std::cout << enemyName << " HP: " << enemyHp << " | " << heroName << " HP: " << heroHp << "\n";
-        
+
         // If the AttackOrder is 1 then the hero is attacking first
         if (AttackOrder % 2 == 1)
         {
@@ -439,7 +439,7 @@ int main()
 
     hero->start_stats(); // Setting the Correct Stats of the Class
     // hero->print();       // Call the print method to display the stats
-    std::cout << "What difficulty do you want to play?\n1.Easy\n2.Normal\n3.Hard";
+    std::cout << "What difficulty do you want to play?\n1.Easy\n2.Normal\n3.Hard\n";
     std::cin >> difficulty;
 
     std::cout << "\n";
