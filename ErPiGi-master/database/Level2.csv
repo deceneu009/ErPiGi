@@ -1,0 +1,10 @@
+Enemy,Hp,PhysicalDamage,MagicPower,MagicResistance,Defense,Element
+Python,20,10,10,10,3,nature
+Crazy Parrot,15,10,9,10,6,nature
+Drunk Slime,20,10,10,10,3,earth
+Wild dog,30,10,10,10,3,nature
+Poisonous frog,25,10,10,10,3,nature
+Blue rabid wolf,40,20,10,10,3,water
+Stinky rat,20,10,10,10,3,earth
+Deaf Gnome,35,10,10,10,3,earth
+Fire Gecko,25,10,10,10,3,fire
