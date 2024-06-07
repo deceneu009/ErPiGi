@@ -1,10 +1,10 @@
 Enemy,Hp,PhysicalDamage,MagicPower,MagicResistance,Defense,Element
-Mega Shark,
-Cyclops,
-Katana Master,
-Green Beetle,
-Dacus,
-Limbo God
-Repzilla
-WoodMan
-Big FOot
+Mega Shark,1000,300,700,500,400,nature
+Cyclops,1000,300,700,500,400,nature
+Katana Master,1000,300,700,500,400,nature
+Green Beetle,1000,300,700,500,400,nature
+Dacus,1000,300,700,500,400,nature
+Limbo God,1000,300,700,500,400,nature
+Repzilla,1000,300,700,500,400,nature
+WoodMan,1000,300,700,500,400,nature
+Big FOot,1000,300,700,500,400,nature

@@ -1,10 +1,10 @@
 Enemy,Hp,PhysicalDamage,MagicPower,MagicResistance,Defense,Element
-Wedel Dwarf,
-Boulder,
-Evil Merchant,
-Wind Traveler,
-Deadly Archer,
-Tinky Pinky,
-Goblin Rider,
-Ryan the Lion
-Onion Hater
+Wedel Dwarf,150,80,50,50,90,earth
+Boulder,200,150,10,10,100,earth
+Evil Merchant,300,30,100,90,40,darkness
+Wind Traveler,120,30,110,90,40,wind
+Deadly Archer,50,30,10,10,40,poison
+Tinky Pinky,50,30,10,10,40,pink
+Goblin Rider,50,30,10,10,40,nature
+Ryan the Lion,50,30,10,10,40,fire
+Onion Hater,50,30,10,10,40,nature

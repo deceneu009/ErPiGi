@@ -2,6 +2,7 @@
 #include "character/hero/Hero.h"
 #include "character/enemy/Enemy.h"
 #include "game/gameplay/Game.h"
+
 #include <algorithm>
 #include <random>
 #include <time.h>
@@ -20,6 +21,13 @@ int main() {
     std::cin >> element;
     std::cout << "\n";
 
+    std::transform(element.begin(), element.end(), element.begin(), ::tolower);
+
+    if (element != "fire" && element != "water" && element != "earth" && element != "nature") {
+        std::cout << "ERROR!\nYou need to choose one of the following elements:\n1.Fire\n2.Water\n3.Earth\n4.Nature\n";
+        return 1;
+    }
+    // Smart pointer?
     Hero* hero = nullptr;
 
     std::cout << "What is your character speciality?\n1.Rogue\n2.Warrior\n3.Mage\n4.Defender\n\n";
@@ -31,27 +39,38 @@ int main() {
     if (characterClass == "mage")
         hero = new Mage(characterName, element);
 
-    if (characterClass == "rogue")
+    else if (characterClass == "rogue")
         hero = new Rogue(characterName, element);
 
-    if (characterClass == "warrior")
+    else if (characterClass == "warrior")
         hero = new Warrior(characterName, element);
 
-    if (characterClass == "defender")
+    else if (characterClass == "defender")
         hero = new Defender(characterName, element);
+    else {
+        std::cout << "ERROR!\nYou need to choose one of the following Classes:\n1.Rogue\n2.Warrior\n3.Mage\n4.Defender\n\n";
+        return 1;
+    }
 
     std::cout << "\n";
 
     hero->start_stats();
-    hero->print();
+    //hero->print();
+    int difficulty;
+
+    std::cout << "What difficulty do you want to play?\n1.Easy\n2.Normal\n3.Hard\n";
+    std::cin >> difficulty;
 
     std::cout << "\n";
 
     while (level < MAX_LEVEL) {
 
-        if (level >= 2)
+        if (level >= 2) {
             hero->LevelUpHero();
-
+            if (difficulty == 1 || difficulty == 3) {
+                adjustStatsBasedOnDifficulty(hero, difficulty);
+            }
+        }
         std::string enemyName = getName();
         Enemy *enemy = nullptr;
 
@@ -64,7 +83,7 @@ int main() {
 
         startBattle(hero, enemy);
 
-        if (Alive == true) {
+        if (Alive == true && level < MAX_LEVEL - 1) {
 
             std::cout << "Do you want to continue?(yes/no)\n";
             std::cin >> continuation;

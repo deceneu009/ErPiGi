@@ -2,9 +2,9 @@ Enemy,Hp,PhysicalDamage,MagicPower,MagicResistance,Defense,Element
 Mother Nature,10000,1000,5000,3000,2500,nature
 Megalodon,8000,3000,5000,4000,4000,water
 Floppa,7000,2000,4000,2500,,nature 
-Oziriss,10000,4000,5000,4500,,darkness
+Oziriss,10000,4000,5000,4500,4000,darkness
 The Blacksmith,19999,1500,1000,7000,10000,earth
-Golden Dragon,
-Baba_Yaga,10000,500,10000,6000,,darkness
-Old Wizard,
-Cerberus,
+Golden Dragon,50000,2000,1500,10000,10000,fire
+Baba Yaga,10000,500,10000,6000,4000,darkness
+Old Wizard,5000,400,20000,8000,5000,every
+Cerberus,30000,8000,4000,7000,3000,fire

@@ -1,10 +1,10 @@
 Enemy,Hp,PhysicalDamage,MagicPower,MagicResistance,Defense,Element
-Flying Pan,
-Air Fryer,
-ALBALUX HALOFERAX,
-Swamp Theng,
-Hound Dog,
-Grumpy Cat,
-Doinky Bonky
-Nettle Man
-Swamp Puppy
+Flying Pan,50,30,10,10,40,steel
+Air Fryer,50,30,10,10,40,steel
+ALBALUX HALOFERAX,70,40,40,30,30,steel
+Swamp Theng,40,30,50,40,30,earth
+Hound Dog,50,40,20,30,40,earth
+Grumpy Cat,40,25,60,45,50,nature
+Doinky Bonky,55,45,52,34,54,water
+Nettle Man,34,43,53,23,13,nature
+Swamp Puppy,54,23,12,54,32,water

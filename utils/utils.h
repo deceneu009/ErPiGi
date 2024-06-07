@@ -7,4 +7,4 @@
 #include <string>
 #include <cstring>
 
-std::string getUserOS();
+void clearScreen();

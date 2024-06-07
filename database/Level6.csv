@@ -1,10 +1,10 @@
-Enemy, Hp, Attack, MagicResistance, Defense, Element
-Phoenix,2500,500,1500,1000,fire
-Unicorn
-Banana Shooter Monkey
-Gunslinger
-Angry Gorilla
-Brain Freezer
-BaitMan
-Spider-Monkey
-Lava Shark
+Enemy,Hp,PhysicalDamage,MagicPower,MagicResistance,Defense,Element
+Phoenix,2500,500,1500,1000,300,fire
+Unicorn,1000,300,700,500,400,nature
+Banana Shooter Monkey,1000,300,700,500,400,nature
+Gunslinger,1000,300,700,500,400,nature
+Angry Gorilla,1000,300,700,500,400,nature
+Brain Freezer,1000,300,700,500,400,nature
+BaitMan,1000,300,700,500,400,nature
+Spider-Monkey,1000,300,700,500,400,nature
+Lava Shark,1000,300,700,500,400,nature

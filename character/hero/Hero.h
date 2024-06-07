@@ -42,7 +42,9 @@ class Hero {
             return element;
         }
 
-        // setting stats for elements
+        std::string getName() const {
+            return name;
+        }
         void SetDefense(float value) { Defense = value; }
         void SetMagicResistance(float value) { MagicResistance = value; }
         void SetMagicPower(float value) { MagicPower = value; }
@@ -51,7 +53,7 @@ class Hero {
 
         virtual void LevelUpHero() = 0;
 
-        ~Hero() {
+        virtual ~Hero() {
             std::cout<<"THE LEGEND OF THE HERO WILL PERSIST IN OUR HEARTS!";
         }
 

@@ -13,6 +13,23 @@ float adjustMagicalDamage(float magicalResistance, float magicalPower) {
 
     return actualMagicDamage;
 }
+void adjustStatsBasedOnDifficulty(Hero *hero, int difficulty) {
+    if (difficulty == 1) {
+
+        hero->SetDefense(hero->GetDefense() * 1.5);
+        hero->SetMagicPower(hero->GetMagicPower() * 1.5);
+        hero->SetMagicResistance(hero->GetMagicResistance() * 1.5);
+        hero->SetPhysicalDamage(hero->GetPhysicalDamage() * 1.5);
+    }
+
+    if (difficulty == 3) {
+
+        hero->SetDefense(hero->GetDefense() * 0.5);
+        hero->SetMagicPower(hero->GetMagicPower() * 0.5);
+        hero->SetMagicResistance(hero->GetMagicResistance() * 0.5);
+        hero->SetPhysicalDamage(hero->GetPhysicalDamage() * 0.5);
+    }
+}
 
 
 Stats adjustStatsBasedOnElement(Hero *hero, Enemy *enemy) {
@@ -151,6 +168,7 @@ void startBattle(Hero *hero, Enemy *enemy) {
     float heroMagicResistance = hero->GetMagicResistance();
     float heroMagicPower = hero->GetMagicPower();
 
+    std::string heroName = hero->getName();
     // Second value is assigned to the Enemy
     randomNumber = rand();
     int enemyAttackOrder = randomNumber % 6;
@@ -161,6 +179,8 @@ void startBattle(Hero *hero, Enemy *enemy) {
     int enemyHp = enemy->GetHp();
     int enemyMagicResistance = enemy->GetMagicResistance();
     int enemyMagicPower = enemy->GetMagicPower();
+
+    std::string enemyName = enemy->GetName();
 
     // calculating how much Physical dmg each one should give
     int enemyActualDmg = adjustPhysicalDamage(heroDefense, enemyPhysicalDamage);
@@ -176,7 +196,13 @@ void startBattle(Hero *hero, Enemy *enemy) {
     else
         attackOrder = 2;
 
+    clearScreen();
+    int round = 1;
+
     while (enemyHp > 0 && heroHp > 0) {
+
+        std::cout << "ROUND " << round << "\n";
+        std::cout << enemyName << " HP:" << enemyHp << " | " << heroName <<" HP" << heroHp << "\n";
         // If the AttackOrder is 1 then the hero is attacking first
         if (attackOrder % 2 == 1) {
 
@@ -185,18 +211,27 @@ void startBattle(Hero *hero, Enemy *enemy) {
 
             if (attackChoice == 1) {
                 enemyHp -= heroActualDmg;
+                std::cout << "dealt:" << heroActualDmg << "\n";
+                std::cout << enemyName << " HP: " << enemyHp << "\n\n";
                 attackOrder++;
+                round++;
                 continue;
             }
             else if (attackChoice == 2) {
                 enemyHp -= heroActualMagicDmg;
                 attackOrder++;
+                std::cout << heroName <<" dealt: " << heroActualMagicDmg << "\n";
+                std::cout << enemyName << " HP: " << enemyHp << "\n\n";
+                round++;
                 continue;
             }
             else {
                 if (attackChoice == 1) {
                     enemyHp -= heroActualDmg;
                     attackOrder++;
+                    std::cout << heroName <<" dealt: " << heroActualMagicDmg << "\n";
+                    std::cout << enemyName << " HP: " << enemyHp << "\n\n";
+                    round++;
                     continue;
                 }
             }
@@ -211,22 +246,34 @@ void startBattle(Hero *hero, Enemy *enemy) {
         // based on the random number the enemy will use a physical or a magic attack
         if (enemyAttack == 0) {
             if (enemyActualDmg <= 0) {
-                std::cout << "Enemy missed!\n";
+                std::cout << enemyName << " missed!\n";
+                round++;
+                std::cout << enemyName << " dealt 0 damage\n";
+                std::cout << heroName << " HP :" << heroHp << "\n\n";
+                attackOrder++;
                 continue;
             }
 
             heroHp -= enemyActualDmg;
+            std::cout << enemyName <<" dealt:" << enemyActualDmg << "\n";
+            std::cout << heroName << " HP :" << heroHp << "\n\n";
             attackOrder++;
             continue;
         }
 
         if (enemyActualMagicDmg <= 0) {
-            std::cout << "Enemy missed his spell!";
+            std::cout << enemyName << " missed his spell!\n";
+            std::cout << enemyName << " dealt 0 damage\n";
+            std::cout << heroName << " HP :" << heroHp << "\n\n";
+            round++;
             attackOrder++;
             continue;
         }
 
         heroHp -= enemyActualMagicDmg;
+        std::cout << enemyName <<" dealt:" << enemyActualDmg << "\n";
+        std::cout << heroName << " HP :" << heroHp << "\n\n";
+        round++;
         attackOrder++;
         continue;
     }

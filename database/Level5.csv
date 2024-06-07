@@ -1,10 +1,10 @@
 Enemy,Hp,PhysicalDamage,MagicPower,MagicResistance,Defense,Element
-Fire_Golem,1000,400,500,500,500,fire
-Earth_Golem,3000,200,600,600,600,earth
-Water_Golem,2000,300,400,300,400,water
-Nature_Golem,1000,300,700,500,400,nature
-Mud Troll,
-Cemetery Ghoul
-Ice Bear
-Fire Snake
-Ogre
+Fire Golem,1000,400,500,500,500,fire
+Earth Golem,3000,200,600,600,600,earth
+Water Golem,2000,300,400,300,400,water
+Nature Golem,1000,300,700,500,400,nature
+Mud Troll,1000,300,700,500,400,nature
+Cemetery Ghoul,1000,300,700,500,400,nature
+Ice Bear,1000,300,700,500,400,nature
+Fire Snake,1000,300,700,500,400,nature
+Ogre,1000,300,700,500,400,nature

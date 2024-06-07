@@ -1,10 +1,10 @@
 Enemy,Hp,PhysicalDamage,MagicPower,MagicResistance,Defense,Element
-Baron von Mezd,
-The Immortal,
-Harbringer,
-BetMan
-Purple Haze
-Tyron Von Iron
-Tyron Vand Hairon
-Zincus Rocus Papa Glocus
-Alnico
+Baron von Mezd,1000,300,700,500,400,nature
+The Immortal,1000,300,700,500,400,nature
+Harbringer,1000,300,700,500,400,nature
+BetMan,1000,300,700,500,400,nature
+Purple Haze,1000,300,700,500,400,nature
+Tyron Von Iron,1000,300,700,500,400,nature
+Tyron Vand Hairon,1000,300,700,500,400,nature
+Zincus Rocus Papa Glocus,1000,300,700,500,400,nature
+Alnico,1000,300,700,500,400,nature

@@ -1,10 +1,10 @@
 Enemy,Hp,PhysicalDamage,MagicPower,MagicResistance,Defense,Element
-Spirit of Annihilation,
-AETIUS TORGOVUS,
-Ork King,
-Nine-Tailed Fox,
-Living Tornado,
-Anaklin Skyscrapper,
-Darth Mutter,
-Necromancer,
-Chosen Swordmaster
+Spirit of Annihilation,1000,300,700,500,400,nature
+AETIUS TORGOVUS,1000,300,700,500,400,nature
+Ork King,1000,300,700,500,400,nature
+Nine-Tailed Fox,1000,300,700,500,400,nature
+Living Tornado,1000,300,700,500,400,nature
+Anaklin Skyscrapper,1000,300,700,500,400,nature
+Darth Mutter,1000,300,700,500,400,nature
+Necromancer,1000,300,700,500,400,nature
+Chosen Swordmaster,1000,300,700,500,400,nature
