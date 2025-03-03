@@ -3,29 +3,33 @@ project(ErPiGi)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(.)
-include_directories(character)
-include_directories(character/enemy)
-include_directories(character/hero)
-include_directories(game/inventory)
-include_directories(utils)
+# Detect OS
+if(UNIX AND NOT APPLE)
+    message(STATUS "Compiling for Linux")
+elseif(WIN32)
+    message(STATUS "Compiling for Windows")
+endif()
 
+# Define executable first
 add_executable(ErPiGi
-        character/enemy/Enemy.cpp
-        character/enemy/Enemy.h
-        character/hero/Hero.cpp
-        character/hero/Hero.h
-        character/generator.cpp
-        character/generator.h
-        utils/utils.cpp
-        utils/utils.h
-        Game.cpp
-        game/levels/Levels.cpp
-        game/levels/Levels.h
-        character/player/Player.cpp
-        character/player/Player.h
-        game/gameplay/Game.cpp
-        game/gameplay/Game.h
-        game/gameplay/Game.h
-        game/gameplay/Game.h
+    character/enemy/Enemy.cpp
+    character/hero/Hero.cpp
+    character/generator.cpp
+    utils/utils.cpp
+    ErPiGi.cpp
+    game/levels/Levels.cpp
+    character/player/Player.cpp
+    game/gameplay/Game.cpp
 )
+
+# Include directories after defining the executable
+target_include_directories(ErPiGi PRIVATE 
+    character 
+    character/enemy 
+    character/hero 
+    game/inventory 
+    utils
+)
+
+# Link pthread if needed
+#target_link_libraries(ErPiGi pthread)
