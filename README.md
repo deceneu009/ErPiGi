@@ -12,11 +12,14 @@ git clone https://github.com/deceneu009/ErPiGi.git
 
 ### For Linux:
 
+Prerequisited: Cmake
+
 ```bash
 mkdir build
 cd build
 cmake ..
 make
+./ErPiGi
 ```
 
 ### For Windows:
