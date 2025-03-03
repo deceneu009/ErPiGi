@@ -1,0 +1,7 @@
+# No Clion config files
+.idea
+
+# No visual studio code config files
+.vscode
+
+build
