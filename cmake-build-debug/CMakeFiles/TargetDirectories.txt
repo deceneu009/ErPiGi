@@ -1,3 +1,0 @@
-/home/seb/Desktop/ErPiGi/cmake-build-debug/CMakeFiles/ErPiGi.dir
-/home/seb/Desktop/ErPiGi/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/seb/Desktop/ErPiGi/cmake-build-debug/CMakeFiles/rebuild_cache.dir

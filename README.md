@@ -1,23 +1,28 @@
 # ErPiGi - C++ CLI Game
+
 **ErPiGi** is a C++ CLI Game for Programing Project Course
 
 # How to get the game
 
 First you have to clone the repository on your machine:
+
 ```bash
 git clone https://github.com/deceneu009/ErPiGi.git
-
 ```
 
 ### For Linux:
 
-You open the `cmake-build-debug` folder, and in a terminal you open the `ErPiGi` executable
 ```bash
-./ErPiGi
+mkdir build
+cd build
+cmake ..
+make
 ```
 
 ### For Windows:
+
 You open the executable `Game.exe` from the main folder in a terminal.
+
 ```bash
 ./Game.exe
 ```
@@ -29,7 +34,6 @@ You open the executable `Game.exe` from the main folder in a terminal.
 - You choose your character's speciality (`Rogue`, `Warrior`, `Mage` and `Defender`)
 - You choose the difficulty of the session of this game (`1`: Easy, `2`: Normal and `3`: Hard. `Default`: `2`)
 - The rest is history...
-
 
 # Preview
 
