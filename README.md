@@ -12,7 +12,7 @@ git clone https://github.com/deceneu009/ErPiGi.git
 
 ### For Linux:
 
-Prerequisited: Cmake
+Prerequisites: Cmake
 
 ```bash
 mkdir build
